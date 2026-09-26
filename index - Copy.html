@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Musah Mobiles customer storefront">
+  <title>Musah Mobiles | Customer Store</title>
+  <link rel="icon" type="image/svg+xml" href="musa-mobiles-icon.svg">
+  <link rel="apple-touch-icon" href="musa-mobiles-icon.svg">
+  <meta name="theme-color" content="#090a0d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="brand-fix.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html"><span class="brand-mark">P</span><span><strong>phone place</strong><small>devices · care · accessories</small></span></a>
+      <div class="topbar-actions">
+        <span class="secure-note"><span class="status-dot"></span> Public storefront</span>
+        <a class="button button-quiet owner-toggle" href="owner.html">Owner access <span>↗</span></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="view public-view active" id="publicView">
+        <div class="public-hero">
+          <div class="hero-copy">
+            <p class="eyebrow">THE RIGHT DEVICE, WITHOUT THE RUNAROUND</p>
+            <h1>Good tech should feel <em>simple.</em></h1>
+            <p class="hero-intro">Browse trusted phones and everyday essentials, checked by our team and ready when you are.</p>
+            <a class="button button-dark" href="#catalog">Shop available stock <span>↓</span></a>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="hero-phone hero-phone-back"><span>14</span></div>
+            <div class="hero-phone hero-phone-front"><span>15</span><i></i></div>
+            <div class="hero-sticker">fresh<br><b>stock</b></div>
+          </div>
+        </div>
+
+        <section class="catalog-section" id="catalog">
+          <div class="section-heading">
+            <div><p class="eyebrow">IN STORE NOW</p><h2>Available today</h2></div>
+            <span class="inventory-count" id="publicStockCount">0 products</span>
+          </div>
+          <div class="catalog-tools">
+            <input id="publicSearch" type="search" placeholder="Search phones, laptops, chargers..." aria-label="Search products">
+            <div class="filter-row" id="categoryFilters"></div>
+          </div>
+          <div class="product-grid" id="publicProductGrid"></div>
+          <div class="empty-state hidden" id="publicEmptyState">No products match your search.</div>
+        </section>
+
+        <section class="service-strip">
+          <div><span class="service-icon">✓</span><b>Checked before sale</b><p>Every device gets a quick quality check.</p></div>
+          <div><span class="service-icon">↺</span><b>Straight answers</b><p>Clear prices and honest condition notes.</p></div>
+          <div><span class="service-icon">⌁</span><b>Local support</b><p>Advice that continues after checkout.</p></div>
+        </section>
+
+        <section class="trust-section">
+          <div class="trust-heading"><p class="eyebrow">SHOP WITH CONFIDENCE</p><h2>Clear details. No surprises.</h2><p>We help you choose the right device and stay available after the sale.</p></div>
+          <div class="trust-grid">
+            <article class="trust-item"><span class="trust-number">01</span><div><h3>Devices are checked</h3><p>We inspect key functions and share honest condition notes before you buy.</p></div></article>
+            <article class="trust-item"><span class="trust-number">02</span><div><h3>Warranty explained clearly</h3><p>Ask our team about the warranty or return terms for any specific product.</p></div></article>
+            <article class="trust-item"><span class="trust-number">03</span><div><h3>Local help after purchase</h3><p>Get setup guidance, accessory advice, and quick support through WhatsApp.</p></div></article>
+          </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+          <div class="contact-intro">
+            <p class="eyebrow">COME THROUGH OR MESSAGE US</p>
+            <h2>Good advice is one message away.</h2>
+            <p>Ask about stock, specs, prices, or finding the right device for you.</p>
+          </div>
+          <div class="contact-grid">
+            <a class="contact-card whatsapp-card" href="https://wa.me/254797933367?text=Hello%20Musah%20Mobiles%2C%20I%27d%20like%20to%20ask%20about%20a%20product." target="_blank" rel="noopener"><span class="contact-icon">↗</span><span><small>WHATSAPP</small><b>0797 933 367</b><em>Chat with Musah Mobiles</em></span></a>
+            <a class="contact-card" href="tel:+254797933367"><span class="contact-icon">☎</span><span><small>CALL US</small><b>0797 933 367</b><em>Speak to Musah Mobiles</em></span></a>
+            <div class="contact-card"><span class="contact-icon">◷</span><span><small>OPENING HOURS</small><b>8:00 AM – 8:00 PM</b><em>Every day</em></span></div>
+            <div class="contact-card"><span class="contact-icon">₿</span><span><small>PAYMENT METHODS</small><b>M-Pesa</b><em>Pay via 0181026176</em></span></div>
+            <div class="contact-card hidden" id="publicDeliveryCard"><span class="contact-icon">⌁</span><span><small>DELIVERY</small><b id="publicDeliveryFee">Available</b><em id="publicDeliveryAreas"></em></span></div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop"><div class="modal" role="dialog" aria-modal="true"><button class="modal-close" id="modalClose">×</button><p class="eyebrow" id="modalEyebrow">OWNER DESK</p><h2 id="modalTitle">Add a product</h2><p class="modal-copy" id="modalCopy">Keep your public catalogue up to date.</p><form id="modalForm"></form></div></div>
+  <div class="product-detail-backdrop hidden" id="productDetailBackdrop"><article class="product-detail" role="dialog" aria-modal="true" aria-labelledby="productDetailTitle"><button class="modal-close product-detail-close" id="productDetailClose" aria-label="Close product details">×</button><div class="product-detail-image" id="productDetailImage"><span id="productDetailIcon">M</span></div><div class="product-detail-content"><p class="eyebrow" id="productDetailCategory">PRODUCT DETAILS</p><h2 id="productDetailTitle">Product</h2><strong class="product-detail-price" id="productDetailPrice">KSh 0</strong><p class="product-detail-condition" id="productDetailCondition"></p><div class="product-detail-specs" id="productDetailSpecs"></div><p class="product-detail-stock" id="productDetailStock"></p><div class="product-detail-actions"><button class="button button-dark" id="productDetailOrder">Order on WhatsApp <span>↗</span></button><button class="button button-quiet" id="productDetailAsk">Ask a question</button></div></div></article></div>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script type="module" src="discount-utils.js"></script>
+  <script src="auth.js"></script>
+  <script src="script.js"></script>
+  <script src="customer.js"></script>
+  <script src="secure-api.js"></script>
+</body>
+</html>

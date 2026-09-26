@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Musah Mobiles owner dashboard">
+  <title>Musah Mobiles | Owner Dashboard</title>
+  <link rel="icon" type="image/svg+xml" href="musa-mobiles-icon.svg">
+  <link rel="apple-touch-icon" href="musa-mobiles-icon.svg">
+  <meta name="theme-color" content="#090a0d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="brand-fix.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html"><span class="brand-mark">P</span><span><strong>phone place</strong><small>devices · care · accessories</small></span></a>
+      <div class="topbar-actions">
+        <span class="secure-note"><span class="status-dot"></span> Owner dashboard</span>
+        <a class="button button-quiet owner-toggle" href="index.html">Customer store <span>↗</span></a>
+      </div>
+    </header>
+
+    <main>
+      <section class="view owner-view active" id="ownerView">
+        <div class="owner-layout">
+          <aside class="owner-sidebar">
+            <div class="sidebar-title"><span class="brand-mark">P</span><div><strong>Owner desk</strong><small>Phone Place</small></div></div>
+            <nav class="owner-nav">
+              <button class="nav-item active" data-owner-section="overview"><span>▦</span> Overview</button>
+              <button class="nav-item" data-owner-section="inventory"><span>⌑</span> Inventory</button>
+              <button class="nav-item" data-owner-section="sales"><span>↗</span> Sales log</button>
+              <button class="nav-item" data-owner-section="expenses"><span>−</span> Expenses</button>
+              <a class="nav-item" href="index.html"><span>↩</span> Customer store</a>
+            </nav>
+            <div class="sidebar-bottom"><span class="avatar">GS</span><div><b>Gabriel & Sons</b><small>Administrator</small></div><button id="logoutButton" title="Return to customer store">↪</button></div>
+          </aside>
+
+          <div class="owner-content">
+            <div class="owner-header">
+              <div>
+                <p class="eyebrow">BUSINESS OVERVIEW</p>
+                <h2 id="ownerSectionTitle">Good morning, Gabriel.</h2>
+              </div>
+              <button class="button button-dark" id="quickAddButton">＋ Add stock</button>
+            </div>
+
+            <div class="owner-section active" id="overviewSection">
+              <div class="metric-grid">
+                <article class="metric-card metric-primary"><span class="metric-label">Net profit · this month</span><strong id="netProfitMetric">Ksh 0</strong><span class="metric-trend" id="profitTrend">Based on recorded sales</span></article>
+                <article class="metric-card"><span class="metric-label">Gross profit · this month</span><strong id="grossProfitMetric">Ksh 0</strong><span class="metric-trend neutral">Revenue less product cost</span></article>
+                <article class="metric-card"><span class="metric-label">Stock value at cost</span><strong id="stockValueMetric">Ksh 0</strong><span class="metric-trend neutral" id="stockUnitsMetric">0 units available</span></article>
+                <article class="metric-card"><span class="metric-label">Monthly expenses</span><strong id="expensesMetric">Ksh 0</strong><span class="metric-trend neutral">Operating costs recorded</span></article>
+              </div>
+              <div class="dashboard-grid">
+                <article class="panel chart-panel">
+                  <div class="panel-heading"><div><p class="eyebrow">PERFORMANCE</p><h3>Profit overview</h3></div><span class="period-label">Last 6 months</span></div>
+                  <div class="chart-wrap"><div class="y-axis"><span>Ksh 10k</span><span>Ksh 5k</span><span>Ksh 0</span></div><div class="chart"><div class="chart-grid-lines"><i></i><i></i><i></i></div><svg viewBox="0 0 600 190" preserveAspectRatio="none"><path class="chart-area" d="M0,158 C45,142 72,155 110,119 S175,122 205,112 S270,126 300,83 S370,95 398,72 S455,91 482,54 S545,67 600,30 L600,190 L0,190Z"></path><path class="chart-line" d="M0,158 C45,142 72,155 110,119 S175,122 205,112 S270,126 300,83 S370,95 398,72 S455,91 482,54 S545,67 600,30"></path></svg><div class="x-axis"><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span></div></div></div>
+                </article>
+
+                <article class="panel activity-panel">
+                  <div class="panel-heading"><div><p class="eyebrow">RECENT ACTIVITY</p><h3>Latest movement</h3></div><button class="text-button" type="button">View all</button></div>
+                  <div class="activity-list" id="activityList"></div>
+                </article>
+
+                <article class="panel low-stock-panel">
+                  <div class="panel-heading"><div><p class="eyebrow">WATCHLIST</p><h3>Low stock</h3></div></div>
+                  <div class="low-stock-list" id="lowStockList"></div>
+                </article>
+              </div>
+            </div>
+
+            <div class="owner-section" id="inventorySection">
+              <div class="section-toolbar"><div><p class="eyebrow">PRODUCTS</p><h3>Inventory</h3></div><button class="button button-dark" id="inventoryAddButton">＋ Add product</button></div>
+              <div class="panel table-panel">
+                <div class="table-tools"><input type="search" id="inventorySearch" placeholder="Search products..." aria-label="Search products"><span id="inventorySummary"></span></div>
+                <div class="table-scroll"><table><thead><tr><th>Product</th><th>Category</th><th>Cost price</th><th>Selling price</th><th>Discount</th><th>In stock</th><th>Status</th><th></th></tr></thead><tbody id="inventoryTableBody"></tbody></table></div>
+              </div>
+            </div>
+
+            <div class="owner-section" id="salesSection">
+              <div class="section-toolbar"><div><p class="eyebrow">TRANSACTIONS</p><h3>Sales log</h3></div><button class="button button-dark" id="recordSaleButton">＋ Record sale</button></div>
+              <div class="panel table-panel">
+                <div class="table-tools"><span class="table-note">All sales recorded in this workspace</span><span id="salesSummary"></span></div>
+                <div class="table-scroll"><table><thead><tr><th>Date</th><th>Product</th><th>Customer</th><th>Paid</th><th>Gross profit</th></tr></thead><tbody id="salesTableBody"></tbody></table></div>
+              </div>
+            </div>
+
+            <div class="owner-section" id="expensesSection">
+              <div class="section-toolbar"><div><p class="eyebrow">OPERATING COSTS</p><h3>Expenses</h3></div><button class="button button-dark" id="recordExpenseButton">＋ Add expense</button></div>
+              <div class="panel table-panel">
+                <div class="table-tools"><span class="table-note">Expenses reduce estimated net profit</span><span id="expensesSummary"></span></div>
+                <div class="table-scroll"><table><thead><tr><th>Date</th><th>Description</th><th>Category</th><th>Amount</th></tr></thead><tbody id="expensesTableBody"></tbody></table></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose">×</button>
+      <p class="eyebrow" id="modalEyebrow">OWNER DESK</p>
+      <h2 id="modalTitle">Add a product</h2>
+      <p class="modal-copy" id="modalCopy">Keep your public catalogue up to date.</p>
+      <form id="modalForm"></form>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script type="module" src="discount-utils.js"></script>
+  <script src="auth.js"></script>
+  <script src="script.js"></script>
+  <script src="secure-api.js"></script>
+</body>
+</html>

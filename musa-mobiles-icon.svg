@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#050608"/>
+  <rect x="91" y="35" width="142" height="272" rx="31" fill="#0b0d11" stroke="#1685cf" stroke-width="13" transform="rotate(-14 162 171)"/>
+  <rect x="136" y="49" width="44" height="7" rx="4" fill="#1685cf" transform="rotate(-14 158 52)"/>
+  <path d="M91 303 169 134 257 225 357 60 420 60 331 239 256 315 177 239 142 320Z" fill="#e8bd43"/>
+  <path d="M256 315 357 60 420 60 331 239Z" fill="#d4d7dc"/>
+  <path d="M142 320 177 239 221 283 204 320Z" fill="#e8bd43"/>
+  <text x="256" y="366" fill="#f3c94e" font-family="Arial, sans-serif" font-size="52" font-weight="900" text-anchor="middle" letter-spacing="7">MUSAH</text>
+  <path d="M73 387H177M335 387H439" stroke="#1685cf" stroke-width="4"/>
+  <text x="256" y="423" fill="#f4f4f1" font-family="Arial, sans-serif" font-size="29" font-weight="700" text-anchor="middle" letter-spacing="8">MOBILES</text>
+  <g fill="#e8bd43" font-family="Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">
+    <text x="114" y="463">▯</text><text x="256" y="463">★</text><text x="398" y="463">◇</text>
+  </g>
+  <g fill="#d4d7dc" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" letter-spacing="3">
+    <text x="161" y="463">QUALITY</text><text x="303" y="463">TRUST</text><text x="445" y="463">VALUE</text>
+  </g>
+</svg>

@@ -1,0 +1,6 @@
+html body .brand-mark {
+  background: #050608 url('musa-mobiles-icon.svg') center / cover no-repeat !important;
+  color: transparent !important;
+  transform: none !important;
+  box-shadow: 0 4px 14px rgba(214, 168, 46, .25) !important;
+}
